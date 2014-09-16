@@ -1,15 +1,26 @@
 
 
-Template.hello.helpers({
-  counter: function () {
-    return Session.get("counter");
+Template.results.helpers({
+  air: function () {
+
+    var airport = Session.setDefault('airport', 'clt');
+    var airport = Session.get('airport');
+
+    Meteor.call('airportData', airport, function (error, results) {
+      
+      console.log(results.content);
+      console.log(results.statusCode);
+
+      Session.set('airportResults', JSON.parse(results.content));
+    });
+
+    return (Session.get('airportResults'));
   }
 });
 
-Template.hello.events({
-  'click button': function () {
-    // increment the counter when button is clicked
-    Session.set("counter", Session.get("counter") + 1);
+Template.select.events({
+  'change .airports' : function (evt, tmpl) {
+    Session.set('airport', tmpl.find('.airports').value);
   }
 });
 
