@@ -1,8 +1,17 @@
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <title>FAA Airport Status API</title>
+  
 </head>
 
 <body>
-{{> select}}
-{{> results}}
+<div class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+  <h1 class="navbar-brand">Airport Status and Wx</h1>       
+  </div> 
+</div>
+<div class="container-fluid">
+  <p>Select Airport: {{> select}}</p>
+  <div id="results">{{> results}}</div>
+</div>
 </body>

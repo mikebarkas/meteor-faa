@@ -1,13 +1,15 @@
 <template name="results">
 
 
-{{air.name}}
-{{air.city}}, {{air.state}}
-{{air.IATA}}
-{{air.weather.visibility}}
-{{air.weather.weather}}
-{{air.weather.temp}}
-{{air.weather.wind}}
-
+<h3>{{air.name}}</h3>
+<p>{{air.city}}, {{air.state}}</p>
+<p>Airport Code: {{air.IATA}}</p>
+<hr/>
+<p>Weather: {{air.weather.weather}}</p>
+<p>Visibility: {{air.weather.visibility}} statute miles<br/>
+Temp: {{air.weather.temp}}<br/>
+Wind: {{air.weather.wind}}</p>
+<hr/>
+<p>{{air.status.reason}}</p>
 
 </template>

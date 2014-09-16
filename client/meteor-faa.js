@@ -8,14 +8,15 @@ Template.results.helpers({
 
     Meteor.call('airportData', airport, function (error, results) {
       
-      console.log(results.content);
-      console.log(results.statusCode);
+      //console.log(results.content);
+      //console.log(results.statusCode);
 
       Session.set('airportResults', JSON.parse(results.content));
     });
 
     return (Session.get('airportResults'));
   }
+
 });
 
 Template.select.events({
